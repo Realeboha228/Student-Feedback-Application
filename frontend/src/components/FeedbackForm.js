@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './FeedbackForm.css';
 
+// API Configuration
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://student-feedback-application-1.onrender.com';
+
 function FeedbackForm({ onFeedbackSubmitted }) {
   const [formData, setFormData] = useState({
     studentName: '',
@@ -62,7 +65,7 @@ function FeedbackForm({ onFeedbackSubmitted }) {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/feedback', {
+      await axios.post(`${API_BASE_URL}/api/feedback`, {
         studentName: formData.studentName,
         courseCode: formData.courseCode,
         comments: formData.comments,
