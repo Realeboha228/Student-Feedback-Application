@@ -1,0 +1,233 @@
+.feedback-list-container {
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 40px 20px;
+}
+
+.feedback-list-container h2 {
+  color: #e2e8f0;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.loading-message,
+.error-message-list,
+.no-feedback {
+  text-align: center;
+  padding: 50px 20px;
+  color: #94a3b8;
+  font-size: 16px;
+  background: rgba(30, 41, 59, 0.7);
+  border-radius: 16px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.error-message-list {
+  color: #f87171;
+  border-color: rgba(248, 113, 113, 0.3);
+}
+
+.feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 24px;
+}
+
+.feedback-card {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.feedback-card:hover {
+  transform: translateY(-5px);
+  border-color: #3b82f6;
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.3);
+}
+
+.feedback-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  gap: 16px;
+}
+
+.student-info h3 {
+  color: #e2e8f0;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.course-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: #e0f2fe;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.rating-display {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.rating-display .star {
+  color: #fbbf24;
+}
+
+.rating-display .star.empty {
+  color: #475569;
+}
+
+.feedback-comments {
+  color: #4d617a;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 14px;
+  padding: 16px;
+  background: rgb(247, 247, 247);
+  border-radius: 10px;
+  border-left: 3px solid #3b82f6;
+}
+
+.feedback-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid rgba(71, 85, 105, 0.5);
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.feedback-date {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.delete-btn {
+  padding: 8px 18px;
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 2px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.delete-btn:hover {
+  background: rgba(239, 68, 68, 0.3);
+  border-color: #ef4444;
+  transform: translateY(-2px);
+}
+
+.delete-btn:active {
+  transform: translateY(0);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 1200px) {
+  .feedback-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .feedback-list-container {
+    padding: 24px 16px;
+    margin: 20px auto;
+  }
+
+  .feedback-list-container h2 {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+
+  .feedback-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .feedback-card {
+    padding: 24px;
+  }
+
+  .feedback-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .student-info h3 {
+    font-size: 18px;
+  }
+
+  .rating-display {
+    font-size: 18px;
+  }
+
+  .feedback-comments {
+    font-size: 13px;
+    padding: 14px;
+  }
+
+  .feedback-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .delete-btn {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback-list-container {
+    padding: 20px 12px;
+  }
+
+  .feedback-list-container h2 {
+    font-size: 24px;
+  }
+
+  .feedback-card {
+    padding: 20px;
+  }
+
+  .student-info h3 {
+    font-size: 16px;
+  }
+
+  .course-badge {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+}

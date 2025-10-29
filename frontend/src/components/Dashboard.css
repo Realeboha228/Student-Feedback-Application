@@ -1,0 +1,268 @@
+.dashboard-container {
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 40px 20px;
+}
+
+.dashboard-container h2 {
+  color: #e2e8f0;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+ 
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.top-courses {
+    font-size: 20px;
+     line-height: 1.8;
+}
+
+
+.loading-dashboard,
+.error-dashboard,
+.no-data-dashboard {
+  text-align: center;
+  padding: 60px 20px;
+  color: #94a3b8;
+  font-size: 18px;
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 16px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  margin: 40px auto;
+  max-width: 700px;
+}
+
+.error-dashboard {
+  color: #f87171;
+  border-color: rgba(248, 113, 113, 0.3);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: rgba(30, 41, 59, 0.7);
+  padding: 30px;
+  border-radius: 16px;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  border-color: #3b82f6;
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.3);
+}
+
+.dashboard-section h3{
+    margin-top: 1.5em;
+    font-size: 25px;
+    margin-bottom: 1em;
+}
+
+.stat-value {
+  font-size: 48px;
+  font-weight: 700;
+  color: #3b82f6;
+  margin-bottom: 12px;
+}
+
+.stat-label {
+  color: #94a3b8;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.rating-breakdown {
+  background: rgba(15, 23, 42, 0.9);
+  padding: 35px;
+  border-radius: 16px;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.rating-breakdown h3 {
+  color: #e2e8f0;
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.rating-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rating-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+}.rating-bar {
+  flex: 1;
+  height: 25px;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.top-courses {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+.rating-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.rating-label {
+  color: #cbd5e1;
+  font-weight: 600;
+  min-width: 70px;
+  font-size: 30px;
+}
+
+.rating-bar-container {
+  flex: 1;
+  background: rgba(30, 41, 59, 0.6);
+  height: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(51, 65, 85, 0.6);
+}
+
+.rating-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #114ef5 0%, #3b82f6 100%);
+  border-radius: 15px;
+  transition: width 0.8s ease;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.rating-count {
+  color: #ffffff;
+  font-weight: 600;
+  min-width: 50px;
+  text-align: right;
+  font-size: 14px;
+}
+
+.empty-breakdown {
+  text-align: center;
+  padding: 50px 20px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 24px 16px;
+    margin: 20px auto;
+  }
+
+  .dashboard-container h2 {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .stat-card {
+    padding: 24px;
+  }
+
+  .stat-value {
+    font-size: 40px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+  }
+
+  .rating-breakdown {
+    padding: 28px;
+  }
+
+  .rating-breakdown h3 {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  .rating-bars {
+    gap: 16px;
+  }
+
+  .rating-bar-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .rating-label {
+    min-width: auto;
+  }
+
+  .rating-bar-container {
+    height: 26px;
+  }
+
+  .rating-count {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 20px 12px;
+  }
+
+  .dashboard-container h2 {
+    font-size: 24px;
+  }
+
+  .stat-card {
+    padding: 20px;
+  }
+
+  .stat-value {
+    font-size: 36px;
+  }
+
+  .rating-breakdown {
+    padding: 24px;
+  }
+
+  .rating-breakdown h3 {
+    font-size: 20px;
+  }
+}
