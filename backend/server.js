@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('mysql2');
+const { Pool } = require('pg');
 const cors = require('cors');
 require('dotenv').config();
 
@@ -10,13 +10,16 @@ app.use(cors());
 app.use(express.json());
 
 // Database Connection
-const db = mysql.createConnection({
+const pool = new Pool({
   host: process.env.DB_HOST,
+  port: process.env.DB_PORT || 5432,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
+  database: process.env.DB_NAME,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
-
 db.connect((err) => {
   if (err) {
     console.error('Database connection failed:', err);
