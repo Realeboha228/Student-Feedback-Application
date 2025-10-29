@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './FeedbackList.css';
 
+// API Configuration
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://student-feedback-application-1.onrender.com';
+
 function FeedbackList({ refreshTrigger }) {
   const [feedbackList, setFeedbackList] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -10,7 +13,7 @@ function FeedbackList({ refreshTrigger }) {
   const fetchFeedback = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/feedback');
+      const response = await axios.get(`${API_BASE_URL}/api/feedback`);
       setFeedbackList(response.data);
       setError('');
     } catch (err) {
@@ -28,7 +31,7 @@ function FeedbackList({ refreshTrigger }) {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this feedback?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/feedback/${id}`);
+        await axios.delete(`${API_BASE_URL}/api/feedback/${id}`);
         // Refresh the list
         fetchFeedback();
       } catch (err) {
@@ -74,7 +77,7 @@ function FeedbackList({ refreshTrigger }) {
               
               <div className="feedback-footer">
                 <span className="feedback-date">
-                  {new Date(feedback.created_at).toLocaleDateString()}
+                  {new Date(feedback.createdAt).toLocaleDateString()}
                 </span>
                 <button 
                   onClick={() => handleDelete(feedback.id)}
