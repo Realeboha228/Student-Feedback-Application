@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Dashboard.css';
 
+// API Configuration
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://student-feedback-application-1.onrender.com';
+
 function Dashboard({ refreshTrigger }) {
   const [stats, setStats] = useState({
     totalFeedback: 0,
@@ -18,7 +21,7 @@ function Dashboard({ refreshTrigger }) {
   const fetchStats = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/feedback');
+      const response = await axios.get(`${API_BASE_URL}/api/feedback`);
       const feedbackData = response.data;
 
       // Calculate statistics
@@ -66,7 +69,6 @@ function Dashboard({ refreshTrigger }) {
       
       <div className="stats-grid">
         <div className="stat-card">
-         
           <div className="stat-info">
             <h3>Total Feedback</h3>
             <p className="stat-number">{stats.totalFeedback}</p>
@@ -74,7 +76,6 @@ function Dashboard({ refreshTrigger }) {
         </div>
 
         <div className="stat-card">
-          
           <div className="stat-info">
             <h3>Average Rating</h3>
             <p className="stat-number">{stats.averageRating} / 5</p>
