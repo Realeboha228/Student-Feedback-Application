@@ -1,0 +1,8 @@
+# Node
+node_modules/
+.env
+database.sqlite
+
+# Build outputs
+frontend/build
+.DS_Store
